@@ -5,8 +5,9 @@
 
 # LUDA: Large URLs Dataset Analyzer for security
 
-_Presented at BlackHat USA 2021 Arsenal_ 
-https://www.blackhat.com/us-21/arsenal/schedule/index.html#luda--large-urls-dataset-analyzer-for-security-23851
+
+_Presented at [BlackHat USA 2021 Arsenal](https://www.blackhat.com/us-21/arsenal/schedule/index.html#luda--large-urls-dataset-analyzer-for-security-23851
+)_ 
 
 # Table of Contents
 1. [Download and getting started](#Download-and-getting-started)
@@ -15,9 +16,9 @@ https://www.blackhat.com/us-21/arsenal/schedule/index.html#luda--large-urls-data
     2. [Feeders](#Feeders)
     3. [Preprocessing](#Preprocessing)
     4. [Clustering](#Clustering)
-    5. [Regex generation](#Regex generation)
-4. [Deployment with docker](#Deployment-with-docker)
-5. [Authors](#Authors)
+    5. [Regex generation](#Regex-generation)
+3. [Deployment with docker to a remote machine](#Deployment-with-docker-to-a-remote-machine)
+4. [Support & contributing to Luda](#Support-&-contributing-to-Luda)
 
 
 Malicious actors often reuse code to deploy their malware, phishing website or CNC server. As a result, similiaries can 
@@ -28,10 +29,11 @@ ready to be deployed inline !
 
 # Download and getting started 
 
-1 .First of all, clone the repo :)
+First of all, clone the repo :)
 
 
-To make sure for everyone, we will run everything inside a docker. Assuming you have docker and docker-composed on your machine,
+To make sure it will work for everyone, we will run everything inside a docker. Assuming you have docker 
+and docker-composed on your machine,
 just run from the project directory
 
 ```bash
@@ -326,7 +328,7 @@ cluster_17_4 : ([^_]\w++)++ ---> [^\.]*+\.php ---> /\w++(?:/kbpanel)?+/post\.php
 ```
 
 
-# Deployment with docker-compose
+# Deployment with docker to a remote machine
 
 Getting an environmment ready can be achieved with 
 
@@ -348,7 +350,7 @@ docker tag luda_image:latest your_docker_user/luda_image
 docker push your_docker_user/luda_image 
 ```
 
-and on the remonte you can either run it with docker-compose (you need to it copy it there) or run
+and on the remote you can either run it with docker-compose (you need to it copy it there) or run
 
 ```bash
 docker rm -f luda; sudo docker run -it -v /home/data/:/code/data -p 5555:8888 --name luda your_docker_user/luda_image bash
@@ -379,7 +381,7 @@ If you always need "sudo" to run docker command, you can just your user to the d
 sudo usermod -a -G docker [user]
 newgrp docker
 ```
-## Connection SSH port Forwarding 
+## Access the remote Jupyter Notebook
 
 Once you are your container running, you can either access the Jupyter notebook via your browser on port 5555 of your server
 
