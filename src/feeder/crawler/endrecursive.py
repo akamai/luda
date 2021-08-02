@@ -1,0 +1,3 @@
+class EndRecursive(Exception):
+    pass
+

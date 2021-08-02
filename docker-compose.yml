@@ -1,0 +1,16 @@
+version: "3"
+services:
+  luda:
+    build: .
+    volumes:
+      - "./data/:/code/data"
+    ports:
+      - "5555:8888"
+    container_name: luda
+    image: luda_image
+    command: "jupyter notebook --allow-root --no-browser --ip 0.0.0.0 --NotebookApp.token='luda' "
+
+    #if you don't want to run jupyter notebook, you can run this below command to keep the container alive
+
+    #command: "tail -F anything" # just to keep it running
+

@@ -1,0 +1,14 @@
+test
+*.log
+log
+*.md
+!README*.md
+README-secret.md
+my_data
+luda_output
+automation
+data
+*.csv
+__pycache__
+test
+personal

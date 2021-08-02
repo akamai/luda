@@ -1,0 +1,14 @@
+js_regex
+Cython
+sklearn
+hdbscan
+numpy
+python-Levenshtein
+pandas
+tqdm
+psutil
+tldextract
+beautifulsoup4
+urllib3
+requests
+pytest
