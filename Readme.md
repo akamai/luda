@@ -18,7 +18,7 @@ _Presented at [BlackHat USA 2021 Arsenal](https://www.blackhat.com/us-21/arsenal
     4. [Clustering](#Clustering)
     5. [Regex generation](#Regex-generation)
 3. [Deployment with docker to a remote machine](#Deployment-with-docker-to-a-remote-machine)
-4. [Support & contributing to Luda](#Support-&-contributing-to-Luda)
+4. [Support and contributing to Luda](#Support-and-contributing-to-Luda)
 
 
 Malicious actors often reuse code to deploy their malware, phishing website or CNC server. As a result, similiaries can 
@@ -391,7 +391,7 @@ ssh -N -f -L localhost:<FREE PORT IN YOUR LOCAL MACHINE>:localhost:5555 -i yourk
 ```
 
 
-# Support & contributing to Luda
+# Support and contributing to Luda
 
 This code is maintained. You are welcome to ask any questions directly on Git. We will try to answer as quick as possible.
 
