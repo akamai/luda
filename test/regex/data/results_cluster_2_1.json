@@ -1,0 +1,92 @@
+{
+  "datasetName": "urls_cluster",
+  "methodDescription": "Console config",
+  "experimentDate": "Jul 29, 2021 3:33:38 PM",
+  "bestSolution": {
+    "solutionJS": "/(?=(\\w+))\\1(?=(((?=(\\w?))\\4[^@])+))\\2",
+    "trainingPerformances": {
+      "character recall": 1.0,
+      "character precision": 1.0,
+      "match precision": 1.0,
+      "character accuracy": 1.0,
+      "match f-measure": 1.0,
+      "match recall": 1.0
+    },
+    "validationPerformances": {
+      "character recall": 1.0,
+      "character precision": 1.0,
+      "match precision": 1.0,
+      "character accuracy": 1.0,
+      "match f-measure": 1.0,
+      "match recall": 1.0
+    },
+    "learningPerformances": {
+      "character recall": 1.0,
+      "character precision": 1.0,
+      "match precision": 1.0,
+      "character accuracy": 1.0,
+      "match f-measure": 1.0,
+      "match recall": 1.0
+    },
+    "solution": "/\\w++(\\w?+[^@])++",
+    "fitness": [
+      0.0,
+      0.0,
+      17.0
+    ]
+  },
+  "bestExtractions": [
+    [
+      {
+        "start": 0,
+        "end": 30
+      }
+    ],
+    [
+      {
+        "start": 0,
+        "end": 28
+      }
+    ],
+    [],
+    []
+  ],
+  "bestExtractionsStrings": [
+    [
+      "/chase/home/auth/Logging_in.ph"
+    ],
+    [
+      "/log/home/auth/Logging_in.ph"
+    ],
+    [],
+    []
+  ],
+  "bestExtractionsStats": [
+    {
+      "fp": 0,
+      "tp": 1
+    },
+    {
+      "fp": 0,
+      "tp": 1
+    },
+    {
+      "fp": 0,
+      "tp": 0
+    },
+    {
+      "fp": 0,
+      "tp": 0
+    }
+  ],
+  "overallExecutionTimeMillis": 145685,
+  "numberMatches": 2,
+  "numberUnmatches": 4,
+  "numberMatchedChars": 58,
+  "numberUnmatchedChars": 28,
+  "numberAnnotatedChars": 86,
+  "numberAllChars": 86,
+  "numberTrainingMatches": 1,
+  "numberTrainingUnmatches": 2,
+  "characterEvaluations": 511388500
+}

@@ -14,6 +14,7 @@ personal
 vt_key.txt
 
 !/test/data_demo.csv
-!/test/clustering/data/save_test/
+!/test/clustering/data/save_test/*
+!/test/feeder/data/vt_key.txt
 !/test/preprocessor/data/data_preprocessing_test.csv
-!/test/regex/data/
+!/test/regex/data/*
