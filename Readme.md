@@ -155,9 +155,33 @@ python main.py
 Check the log on luda_output/logs/luda.log at the end you can see a small report
 
 ```txt
+        N paths: 64
+        N benign in final test: 9486
+        Benign number for retraining : 30
+        N round: 10
+
+        Cluster sig paths:
+
+        cluster_27_0 : (\.*+[^_])++ ---> [^bin]++[^\.]++\.bin
+cluster_12_15 : [^php]*+php ---> /\w\w++/gate\.php ---> /\w\w\w\w\d/gate\.php
+cluster_8_16 : ([^_]\w++)++ ---> [^php]++php ---> /\w++/PHP/\w++\.php
+cluster_17_4 : ([^_]\w++)++ ---> [^\.]*+\.php ---> /\w++(?:/kbpanel)?+/post\.php ---> [^php]*+\w\w\w/?+\w++/post\.php
+
+
+        After final testing:
+        Cluster with 0 FP: {'cluster_8_16', 'cluster_17_4', 'cluster_27_0', 'cluster_12_15'}
+        Number of paths covered with 0 FP: 64
+        Percentage of paths covered with 0 FP: 100.0 %
+
+        ### FP Report ###
+
+        With FP :
 
 
 
+        Without:
+
+        ['cluster_12_15', 'cluster_8_16', 'cluster_27_0', 'cluster_17_4']
 ```
 
 Congrats on your first LUDA run. You now have 2 (Java) regex that can be used malicious urls belonging to the clusters you found :)
@@ -293,41 +317,6 @@ Once you chose your cluster, add their id to "cluster_list"
   }
 
 ```
-
-This is an example of the final report you can get when running test/data_demo.csv
-
-
-```txt
-        N paths: 64
-        N benign in final test: 9486
-        Benign number for retraining : 30
-        N round: 10
-
-        Cluster sig paths:
-
-        cluster_27_0 : (\.*+[^_])++ ---> [^bin]++[^\.]++\.bin
-cluster_12_15 : [^php]*+php ---> /\w\w++/gate\.php ---> /\w\w\w\w\d/gate\.php
-cluster_8_16 : ([^_]\w++)++ ---> [^php]++php ---> /\w++/PHP/\w++\.php
-cluster_17_4 : ([^_]\w++)++ ---> [^\.]*+\.php ---> /\w++(?:/kbpanel)?+/post\.php ---> [^php]*+\w\w\w/?+\w++/post\.php
-
-
-        After final testing:
-        Cluster with 0 FP: {'cluster_8_16', 'cluster_17_4', 'cluster_27_0', 'cluster_12_15'}
-        Number of paths covered with 0 FP: 64
-        Percentage of paths covered with 0 FP: 100.0 %
-
-        ### FP Report ###
-
-        With FP :
-
-
-
-        Without:
-
-        ['cluster_12_15', 'cluster_8_16', 'cluster_27_0', 'cluster_17_4']
-```
-
-
 # Deployment with docker to a remote machine
 
 Getting an environmment ready can be achieved with 
