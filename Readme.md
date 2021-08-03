@@ -148,29 +148,30 @@ We just turned off all step exept the regex generation steps that we want to run
 
 Now again (from the docker)
 
+/!\ This step can take few hours ( ~2h on a 48CPU machine, 378GB RAM without using all its ressources)
+
 ```bash
-python main.py
+python main.py 
 ```
 
-Check the log on luda_output/logs/luda.log at the end you can see a small report
+Check the log on luda_output/logs/luda.log at the end you can see a small report in the log ( where you see how each signature evolved at each round)
 
 ```txt
-        N paths: 64
+        N cluster : 2
+        N paths: 44
         N benign in final test: 9486
         Benign number for retraining : 30
         N round: 10
 
         Cluster sig paths:
 
-        cluster_27_0 : (\.*+[^_])++ ---> [^bin]++[^\.]++\.bin
-cluster_12_15 : [^php]*+php ---> /\w\w++/gate\.php ---> /\w\w\w\w\d/gate\.php
-cluster_8_16 : ([^_]\w++)++ ---> [^php]++php ---> /\w++/PHP/\w++\.php
-cluster_17_4 : ([^_]\w++)++ ---> [^\.]*+\.php ---> /\w++(?:/kbpanel)?+/post\.php ---> [^php]*+\w\w\w/?+\w++/post\.php
+        cluster_27_0 : (\.*+[^_])++ ---> [^bin]*+[^\.]*+\.bin
+cluster_17_4 : ([^_]\w++)++ ---> [^\.]++\.php ---> (\w*+/)++post\.php ---> [^php]++\w\w\w/?+\w++/post\.php
 
 
         After final testing:
-        Cluster with 0 FP: {'cluster_8_16', 'cluster_17_4', 'cluster_27_0', 'cluster_12_15'}
-        Number of paths covered with 0 FP: 64
+        Cluster with 0 FP: {'cluster_17_4', 'cluster_27_0'}
+        Number of paths covered with 0 FP: 44
         Percentage of paths covered with 0 FP: 100.0 %
 
         ### FP Report ###
@@ -181,8 +182,16 @@ cluster_17_4 : ([^_]\w++)++ ---> [^\.]*+\.php ---> /\w++(?:/kbpanel)?+/post\.php
 
         Without:
 
-        ['cluster_12_15', 'cluster_8_16', 'cluster_27_0', 'cluster_17_4']
+        ['cluster_27_0', 'cluster_17_4']
 ```
+
+You also get a report showing basic info on the run. It's a csv stored in the "regex_folder" ( following the above config, it is luda_output/myregexes/report_myregexes.csv)
+
+|id|name        |regex_js                                            |regex_java                     |malicious|benign|round|example_malicious          |results_file             |input_file             |
+|------|------------|----------------------------------------------------|-------------------------------|---------|------|-----|---------------------------|-------------------------|-----------------------|
+|0     |cluster_17_4|(?=([^php]+))\1\w\w\w(?=(/?))\2(?=(\w+))\3/post\.php|[^php]++\w\w\w/?+\w++/post\.php|17       |61    |3    |/mupanel/post.php.         |results_cluster_17_4.json|input_cluster_17_4.json|
+|1     |cluster_27_0|(?=([^bin]*))\1(?=([^\.]*))\2\.bin                  |[^bin]*+[^\.]*+\.bin           |27       |30    |1    |/neat/serverphp/config.bin.|results_cluster_27_0.json|input_cluster_27_0.json|
+
 
 Congrats on your first LUDA run. You now have 2 (Java) regex that can be used malicious urls belonging to the clusters you found :)
 

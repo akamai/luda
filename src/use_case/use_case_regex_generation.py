@@ -47,6 +47,7 @@ class UseCaseRegexGeneration(object):
         self.regex_object.run_with_benign_check(_cluster_dict=cluster_dict, benign_list=str_to_not_match,
                                                 benign_for_retrain=benign_for_retrain,
                                                 take_existing_result=take_existing_result, round_max=round_max)
+        self.regex_object.create_result_report()
 
     @staticmethod
     def load_df(main_file, features_folder):

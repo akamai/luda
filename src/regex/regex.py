@@ -351,3 +351,4 @@ class Regex(object):
                 continue
             result.append(el)
         return result
+
