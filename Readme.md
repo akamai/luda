@@ -193,7 +193,7 @@ You also get a report showing basic info on the run. It's a csv stored in the "r
 |1     |cluster_27_0|(?=([^bin]*))\1(?=([^\.]*))\2\.bin                  |[^bin]*+[^\.]*+\.bin           |27       |30    |1    |/neat/serverphp/config.bin.|results_cluster_27_0.json|input_cluster_27_0.json|
 
 
-Congrats on your first LUDA run. You now have 2 (Java) regex that can be used malicious urls belonging to the clusters you found :)
+Congrats on your first LUDA run. You now have 2 regexes ( Java or JS) that can be used malicious urls belonging to the clusters you found :)
 
 On the next part, we will dive into LUDA architecture to understand each of its components, understand what else you can do and possibly make 
 you contribute to the project !
