@@ -420,7 +420,7 @@ coverage-badge -o test/coverage.svg -f # this will create the coverage badge loa
 **Code**: [Jordan Garzon]
 **Algorithm**: [Jordan Garzon] and [Asaf Nadler]
 
-from Akamai Technologies
+from [Akamai Technologies](https://www.akamai.com)
 
 
 [Jordan Garzon]: https://twitter.com/JordGarzon
