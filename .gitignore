@@ -12,6 +12,7 @@ luda_output
 __pycache__
 personal
 vt_key.txt
+luda.md
 
 !/test/data_demo.csv
 !/test/clustering/data/save_test/*
