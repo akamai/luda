@@ -15,7 +15,7 @@ vt_key.txt
 luda.md
 
 !/test/data_demo.csv
-!/test/config.json
+!config.json
 
 !/test/clustering/data/save_test/*
 !/test/feeder/data/vt_key.txt

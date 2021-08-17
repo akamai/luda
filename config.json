@@ -1,0 +1,52 @@
+{
+  "main_file": "data_demo.csv",
+  "data": {
+    "run": false,
+    "additional_files": [
+      {
+        "path": "my_data/benign_data.csv",
+        "label": "benign"
+      },
+      {
+        "path": "my_data/malicious_traffic.csv",
+        "label": "malicious"}
+
+    ]
+  },
+  "feeder": {
+    "run": false,
+    "sources": [
+      "urlhaus",
+      "openfish",
+      "alexa"
+    ]
+  },
+  "preprocessing": {
+    "run": true,
+    "name": "basic"
+  },
+  "clustering": {
+    "run": true,
+    "preprocessed_file": null,
+    "skip_distance_computation": false,
+    "clusterer": {
+      "dbscan": {
+        "eps": 20,
+        "min_samples": 8
+      }
+    },
+    "metric": "sw",
+    "features_folder": "luda_output/mymatrix",
+    "filter_similarity": 30,
+    "phishing_mode": false
+  },
+  "regex": {
+    "run": false,
+    "benign_for_retrain": 30,
+    "round_max": 10,
+    "regex_folder": "myregexes",
+    "take_existing_result": false,
+    "min_path_for_run": 200,
+    "cluster_list": [0,4]
+  }
+}
