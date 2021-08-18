@@ -108,6 +108,7 @@ class PreprocessorBasic(Preprocessor):
         """
         if not os.path.exists(conf.LAST_REGEX_LIST):
             logger.info('We did not find {}. We skip the cleaning with regexes step'.format(conf.LAST_REGEX_LIST))
+            return df
         with open(conf.LAST_REGEX_LIST) as json_file:
             regex_list = json.load(json_file)['regexes']
         already_found = self.regex_test(regex_list, list(df[df['path'].notnull()]['path'].unique()))[0]

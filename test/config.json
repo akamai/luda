@@ -1,8 +1,17 @@
 {
   "main_file": "data_demo.csv",
   "data": {
-    "run": true,
-    "additional_files": []
+    "run": false,
+    "additional_files": [
+      {
+        "path": "my_data/benign_data.csv",
+        "label": "benign"
+      },
+      {
+        "path": "my_data/malicious_traffic.csv",
+        "label": "malicious"}
+
+    ]
   },
   "feeder": {
     "run": false,

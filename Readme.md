@@ -31,6 +31,7 @@ ready to be deployed inline !
 
 First of all, clone the repo :)
 
+Copy now test/config.json to the main directory.
 
 To make sure it will work for everyone, we will run everything inside a docker. Assuming you have docker 
 and docker-composed on your machine,
