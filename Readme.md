@@ -213,7 +213,9 @@ Every part is independent and can be run separately with the config file.
 ## Data
 
 
-To provide LUDA with some URLs, you can pass some files. The **only condition** that they should have is a column named "url".
+To provide LUDA with some URLs, you can pass some files. The **only condition** that they should have is a column named "url". 
+However, if you provide the main file ( here data_demo.csv) it should have url, source, label, family as columns. 
+So the easiest way to add your files is to add them on the additional_files array. 
 
 LUDA will then load them and store it in its format joined with the data coming from the feeders. By default, it will look for the file
 in the data folder. Otherwise you can write an absolute path. 
