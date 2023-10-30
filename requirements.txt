@@ -1,6 +1,6 @@
 js_regex
 Cython
-sklearn
+scikit-learn
 hdbscan
 numpy
 python-Levenshtein

@@ -1,4 +1,4 @@
-FROM python:3.8-slim-buster
+FROM python:3.8-slim
 
 WORKDIR /code
 RUN yes | apt-get update
@@ -10,7 +10,7 @@ RUN mkdir -p /usr/share/man/man1
 RUN yes | apt-get install default-jdk
 RUN yes | apt-get install vim
 RUN yes | apt-get install screen
-RUN apt-get install htop
+RUN yes | apt-get install htop
 
 
 COPY requirements.txt requirements.txt
